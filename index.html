@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>myGeoJSON</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+
+<div class='w-100 d-flex flex-column justify-content-center align-items-center' style='height: 100vh'>
+    
+    <h1 class='m-2 p-2 display-4'>Input</h1>
+    <p>CSV file with data arranged by LSOA</p>
+    <table class='table' style='width: 400px;'>
+        <tr>
+            <th>
+                LSOA code
+            </th>
+            <th>
+                Value
+            </th>
+        </tr>
+        <tr>
+            <td>
+                W01000001
+            </td>
+            <td>
+                1,234
+            </td>
+        </tr>
+    </table>
+    <div class='m-2 p-2 d-flex flex-column'>
+        <form class='d-flex flex-column justify-content-center align-items-center'>
+            <input type="file" id="file-csv" name="Select CSV">
+        </form>
+    </div>
+    <br>
+    <h1 class='m-2 p-2 display-4'>Output</h1>
+    <p>GeoJSON map file with data values by LSOA boundaries</p>
+    <button class='m-2 p-2 btn btn-lg btn-success' id='submit-btn'>Merge and download</button>
+    <strong class='text-success' id='output'></strong>
+</div>
+
+<div id='loading-screen'>
+    <div class='d-flex flex-row justify-content-center align-items-center' 
+    style='position: absolute; left:0; top:0; width: 100%; height: 100%; background-color: ghostwhite; opacity: 0.9; z-index:2;'>
+
+    <h1 class='text-info'>Loading LSOAs... </h1>
+    <div class="spinner-border text-info" role="status"></div>
+</div>
+</div>
+
+<a id="downloadAnchorElem" style="display:none"></a>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="PapaParse/papaparse.min.js"></script>
+<script src='boundaries.js'></script>
+<script src='main.js'></script>
+</body>
+</html>
