@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/morenost/public_html/MyGeoJSON/
+    - /bin/cp -R * $DEPLOYPATH
