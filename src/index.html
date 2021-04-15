@@ -9,11 +9,11 @@
 <div class='w-100 d-flex flex-column justify-content-center align-items-center' style='height: 100vh'>
     
     <h1 class='m-2 p-2 display-4'>Input</h1>
-    <p>CSV file with data arranged by LSOA</p>
+    <p>CSV file with data arranged by LA</p>
     <table class='table' style='width: 400px;'>
         <tr>
             <th>
-                LSOA code
+                LA code
             </th>
             <th>
                 Value
@@ -21,10 +21,18 @@
         </tr>
         <tr>
             <td>
-                W01000001
+                W06000013
             </td>
             <td>
                 1,234
+            </td>
+        </tr>
+        <tr>
+            <td>
+                W06000014
+            </td>
+            <td>
+                123
             </td>
         </tr>
     </table>
@@ -35,7 +43,7 @@
     </div>
     <br>
     <h1 class='m-2 p-2 display-4'>Output</h1>
-    <p>GeoJSON map file with data values by LSOA boundaries</p>
+    <p>GeoJSON map file with data values by LA boundaries</p>
     <button class='m-2 p-2 btn btn-lg btn-success' id='submit-btn'>Merge and download</button>
     <strong class='text-success' id='output'></strong>
 </div>
@@ -44,7 +52,7 @@
     <div class='d-flex flex-row justify-content-center align-items-center' 
     style='position: absolute; left:0; top:0; width: 100%; height: 100%; background-color: ghostwhite; opacity: 0.9; z-index:2;'>
 
-    <h1 class='text-info'>Loading LSOAs... </h1>
+    <h1 class='text-info'>Loading LAs... </h1>
     <div class="spinner-border text-info" role="status"></div>
 </div>
 </div>

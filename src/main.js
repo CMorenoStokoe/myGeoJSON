@@ -22,17 +22,17 @@ function mergeFiles(){
 
         var mergedFile = {
             "type":"FeatureCollection",
-            "name": "myGeoJSON_lsoa_merged_dataset",
+            "name": "myGeoJSON_la_merged_dataset",
             "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
             "features": []
         };
 
         for(const row of data){
-            var lsoa = row[0];
+            var la = row[0];
             var value = row[1];
             
             for(const feature of boundaries["features"]){
-                if(feature["properties"]["LSOA11CD"] === lsoa){
+                if(feature["properties"]["lad11cd"] === la){
                     feature["properties"]["value"] = Number(value);
                     mergedFile["features"].push(feature);
                 }
